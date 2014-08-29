@@ -30,21 +30,23 @@ public class Person4 {
      * @return the modified string
      */
     private String calc(String input) {
-      //Person 4 put your implementation here
-      return null;
+        String finStr = "";
+        for (int i = 0; i < input.length(); i++) {
+            char cur = input.charAt(i);
+            int newInt = (int) cur + 1;
+            finStr = finStr + (char) newInt;
+        }
+        return finStr;
     }
-    
+
     /**
      * Return a string rep of this object
      * that varies with an input string
      *
      * @param input the varying string
-     * @return the string representing the 
-     *         object
+     * @return the string representing the object
      */
     public String toString(String input) {
       return name + calc(input);
     }
-
 }
-
