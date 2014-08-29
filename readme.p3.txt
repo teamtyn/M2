@@ -12,6 +12,9 @@
 --        \/    \/          \/   \/           \/ 
 
 -- Nicolas de Leon
+-- Extra credit:
+--   pretty pretty design patterns.
+--   dependency inject-stabbing with Dagger.
 
 CREATE USER ndeleon6@gatech.edu;
-GRANT ALL ON TYN.* TO ndeleon6@gatech.edu;
+GRANT ALL ON TYN.* TO ndeleon6@gatech.edu WITH GRANT OPTION;
