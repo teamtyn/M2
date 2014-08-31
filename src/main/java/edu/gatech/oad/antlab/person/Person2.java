@@ -1,4 +1,6 @@
 package edu.gatech.oad.antlab.person;
+import java.lang.Math;
+import java.util.*;
 
 /**
  *  A simple class for person 2
@@ -31,15 +33,38 @@ public class Person2 {
 	 */
 	private String calc(String input) {
 	  //Person 2 put your implementation here
-	  return null;
+        return switcher(input);
+
 	}
+    private static String switcher(String input) {
+        //size and string builder
+        Random r = new Random();
+        int rand;
+        int size = input.length();
+        char el, temp;
+        StringBuilder sb = new StringBuilder(input);
+        //iterates through the entire string
+         for(int i = 0; i < size; i++) {
+            //generate random int from 0 to string size - 1
+            rand = r.nextInt(size);
+            //delete char at index and store temporarily
+            el = sb.charAt(i);
+            sb.deleteCharAt(i);
+            //insert the char randomly into string
+            sb.insert(rand, el);
+
+        }
+        //return the string
+        return sb.toString();
+    }
+
 	/**
 	 * Return a string rep of this object
 	 * that varies with an input string
 	 *
 	 * @param input the varying string
 	 * @return the string representing the 
-	 *         object
+	 * object
 	 */
 	public String toString(String input) {
 	  return name + calc(input);
