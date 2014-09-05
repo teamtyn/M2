@@ -1,0 +1,18 @@
+apply plugin: 'java'
+
+dependencies {
+    compile files('lib/resources.jar')
+}
+
+defaultTasks 'jar'
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'edu.gatech.oad.antlab.pkg1.AntLabMain', 'Class-Path': 'lib/resources.jar'
+    }
+}
+
+task copyLibs(type: Copy) {
+    from configurations.runtime
+    into "libs/lib"
+}
