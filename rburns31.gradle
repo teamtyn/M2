@@ -1,5 +1,7 @@
 apply plugin: 'java'
 
+defaultTasks 'jar'
+
 dependencies {
     compile files('lib/resources.jar')
 }
@@ -8,4 +10,13 @@ jar {
     manifest {
         attributes 'Implementation-Title': 'rburns31', 'Main-Class' : 'edu.gatech.oad.antlab.pkg1.AntLabMain', 'Class-Path': 'lib/resources.jar'
     }
+}
+
+task copyToLibrary(type: Copy) {
+    into "$buildDir/libs/lib"
+    from configurations.runtime
+}
+
+jar {
+    dependsOn copyToLibrary
 }
